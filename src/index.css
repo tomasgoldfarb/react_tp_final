@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Ubuntu:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #253031;
+}
+/*
+nav li {
+    display: inline-block;
+    padding: 10px 0;
+    margin-left: 25px;
+}
+
+nav ul li a {
+    font-family: 'Roboto Mono', monospace;
+    text-decoration: none;
+    color: white
+}
+
+.navbar {
+    background-color: black !important;
+}
+
+h2 {
+
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+}
+
+h3 {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 0 0 5px black;
+    padding-top: 20px;
+}
+
+h5 {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+p {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0px;
+    color: white;
+}
+
+footer {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: #0FF4C6;
+}
+
+.productos {
+    display: inline-block;
+    padding-top: 50px;
+    width: 33%;
+}
+
+img.productos_img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
+.redes {
+    color: #333;
+    font-size: 40px;
+    letter-spacing: 10px;
+} */
+
+/* estilos para contact.html */
+/* #formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 600px;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 60vh;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+input {
+    min-height: 3em;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.formfield:hover {
+    background-color: #253031;
+
+    box-shadow: 0 0 5px #0FF4C6;
+    color: white;
+
+}
+
+.formfield:focus {
+    background-color: #253031;
+    outline: 0 none;
+    box-shadow: 0 0 5px #0FF4C6;
+    color: white;
+
+}
+
+textarea {
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 50px;
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+
+
+label {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14pt;
+
+} */
+
+/* estilos para index.html */
+/* .home {
+    height: 400px;
+    background-image: url(../img/fondo_index.jpg);
+    background-size: cover;
+    background-position: center;
+}
+ */
+
+/* estilos para products.html */
+/* .paleta {
+    border: #333 solid 1px;
+    background-color: white;
+}
+
+.img-fluid:hover {
+    transition: all 0.9s;
+    filter: grayscale(100%)
+}
+ */
+/* .contador {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0px;
+    color: white;
+}
+
+.cart {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0px;
+    color: white;
+} */
