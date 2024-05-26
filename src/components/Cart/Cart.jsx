@@ -10,7 +10,7 @@ const Cart = () => {
             <div className="container my-5">
                 <div className="row">
                     <div className="col text-center">
-                        <div className="alert alert-light" role="alert"><h4>No se encontraron productos en el carrito!</h4></div>
+                        <div className="alert alert-light" role="alert"><h4>No hay productos en el carrito</h4></div>
                         <Link to={"/"} className="btn bg-light my-5">Volver a la página principal</Link>
                     </div>
                 </div>
