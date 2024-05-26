@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const ItemCount = ({ stock }) => {
+const ItemCount = ({ stock, onAdd }) => {
     const [contador, setContador] = useState(1);
     const [itemStock, setItemStock] = useState(stock);
+    const [visible, setVisible] = useState(true)
 
     const incrementar = () => {
         if (contador < itemStock) {
@@ -16,10 +18,12 @@ const ItemCount = ({ stock }) => {
         }
     }
 
-    const onAdd = () => {
+    const addToCart = () => {
         if (contador <= itemStock) {
             setItemStock(itemStock - contador);
+            onAdd(contador);
             setContador(1);
+            setVisible(false);
             console.log("Agregaste " + contador + " productos al Carrito.");
         }
     }
@@ -37,9 +41,9 @@ const ItemCount = ({ stock }) => {
             </div>
             <div className="row">
                 <div className="col-md-4">
-                    {itemStock > 1 ? <button type="button" className="btn bg-light" onClick={onAdd}>Agregar al Carrito</button> : <button type="button" className="btn bg-light"><b>No hay stock</b></button>}
-                </div>
+                    {visible ? <button type="button" className="btn bg-light" onClick={addToCart}> Agregar al carrito</button> : <Link to={"/cart"} className="btn bg-light">Terminar mi compra</Link>}
             </div>
+        </div>
         </div>
     )
 }

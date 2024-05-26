@@ -1,15 +1,7 @@
 import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail.jsx";
-import arrayProductos from "../../productos.jsx"
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { useParams } from "react-router-dom";
-
-const fetchItems = () => {
-   return new Promise((resolve) => {
-      setTimeout(() => {
-         resolve(arrayProductos);
-      }, 2000)
-   })
-};
 
 const Loading = () => {
    return (
@@ -32,13 +24,17 @@ const ItemDetailContainer = () => {
    const { id } = useParams();
 
    useEffect(() => {
-      const fetchData = async () => {
-         const data = await fetchItems();
-         setItem(id ? data.find(item => item.id == id) : {});
-         setLoading(false);
-      };
-
-      fetchData();
+      const db = getFirestore();
+      const docRef = doc(db, "items", id);
+      getDoc(docRef).then(snapShot => {
+         if (snapShot.exists()) {
+            setItem({ id: snapShot.id, ...snapShot.data() });
+            setLoading(false);
+         } else {
+            console.log("No existe el documento!");
+            setItem({});
+         }
+      });
    }, [id]);
 
    return (

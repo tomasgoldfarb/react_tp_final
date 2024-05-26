@@ -1,17 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
-import arrayProductos from "../../productos.jsx"
 import { useParams } from "react-router-dom";
-import { collection, doc, getDocs, getFirestore } from "firebase/firestore";
-
-/* const fetchItems = () => {
-   return new Promise((resolve) => {
-      setTimeout(() => {
-         resolve(arrayProductos)
-      }, 2000)
-   })
-}; */
+import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
    const [items, setItems] = useState([]);
@@ -33,32 +24,20 @@ const ItemListContainer = () => {
 
    }
 
-   /*  useEffect(() => {
-       const fetchData = async () => {
-          const data = await fetchItems();
-          setItems(categoryId ? data.filter(item => item.category == categoryId) : data);
-          setLoading(false);
-       };
- 
-       fetchData();
-    }, [categoryId]); */
-
    useEffect(() => {
       const db = getFirestore();
       const itemsCollection = collection(db, "items");
-      getDocs(itemsCollection).then(snapShot => {
-         console.log(snapShot);
+      const resultQuery = categoryId ? query(itemsCollection, where("category", "==", categoryId)) : itemsCollection;
+      getDocs(resultQuery).then(snapShot => {
          if (snapShot.size > 0) {
-            console.log("Existe el documento");
-            setItems(snapShot.docs.map(item => ({id:item.id, ...item.data()})));
+            setItems(snapShot.docs.map(item => ({ id: item.id, ...item.data() })));
             setLoading(false);
-
          } else {
-            console.log("No existe el documento")
+            console.log("No existen documentos!");
+            setItems([]);
          }
-
-      })
-   },[]);
+      });
+   }, [categoryId]);
 
    return (
       <div className="container my-5">
